@@ -23,19 +23,24 @@ sudo systemctl status ssh
 # typing ur ubuntu's ID and password. SO NOW UR PC CONNECTED SSH. 
 
 
-##(ignore that, it is for my raspberry pi setting. But if u installed ubuntu in raspberry pi. u will need it.)##
-sudo apt install git
-git clone https://github.com/RPi-Distro/raspi-config.git
-cd raspi-config
-sudo ./raspi-config
+#(5). open ubuntu and install vnc-server
+##searching realvnc server and copy download link.
 
-# ENTER(PUSH), TAP(BACK)
-## 6. Advanced Options -> A6 Wayland -> W1 X11 -> OK
-## FINISH
-## again (3)
-## 3. Interface Options -> I2 VNC -> YES -> OK
-## 2. Display Options -> D3 VNC Resolution -> 1600x1200 -> OK
-## FINISH
+wget [https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.13.1-Linux-ARM64.deb](https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.13.1-Linux-ARM64.deb?lai_vid=99PO2KRbqSjzn&lai_sr=5-9&lai_sl=l)
+
+apt install ./deb(use tab)
+
+systemctl enable vncserver-x11-serviced.service
+
+systemctl start vncserver-virtuald.service
+
+apt install xserver-xorg-video-dummy
+cp /etc/X11/vncserver-virtual-dummy.conf /etc/X11/xorg.conf
+
+nano /etc/gdm3/custom.conf
+
+#WaylandEnable=false, remove #
+
 
 
 #(4). install and boot vnc in windows
