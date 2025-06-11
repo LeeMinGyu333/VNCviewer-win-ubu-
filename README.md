@@ -28,16 +28,16 @@ sudo systemctl status ssh
 
 wget [https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.13.1-Linux-ARM64.deb](https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.13.1-Linux-ARM64.deb?lai_vid=99PO2KRbqSjzn&lai_sr=5-9&lai_sl=l)
 
-apt install ./deb(use tab)
+sudo apt install /home/User/VNC-Server-7.13.1-Linux-ARM64.deb
 
 systemctl enable vncserver-x11-serviced.service
 
 systemctl start vncserver-virtuald.service
 
-apt install xserver-xorg-video-dummy
-cp /etc/X11/vncserver-virtual-dummy.conf /etc/X11/xorg.conf
+sudo apt install xserver-xorg-video-dummy
+sudo cp /etc/X11/vncserver-virtual-dummy.conf /etc/X11/xorg.conf
 
-nano /etc/gdm3/custom.conf
+sudo nano /etc/gdm3/custom.conf
 
 #WaylandEnable=false, remove #
 
